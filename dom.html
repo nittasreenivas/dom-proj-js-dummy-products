@@ -33,7 +33,7 @@
         <button onclick="SortByPriceDsc()">SortByPriceDsc</button>
         <button onclick="sortBybeauty()">Beauty</button>
     </div>
-   
+    <h1 id="product-count"></h1>
 <ul id="dd"></ul>
 <script>
     let Products = []
@@ -62,6 +62,7 @@
         newLi.appendChild(newBtn)
         dd.appendChild(newLi)
      })
+     document.getElementById('product-count').innerText = `Total Products: ${data.length}`;
     }
     API()
     function deleteProduct(i){
