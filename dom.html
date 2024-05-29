@@ -31,7 +31,9 @@
     <div>
         <button onclick="SortByPriceAsc()">SortByPriceAsc</button>
         <button onclick="SortByPriceDsc()">SortByPriceDsc</button>
+        <button onclick="sortBybeauty()">Beauty</button>
     </div>
+   
 <ul id="dd"></ul>
 <script>
     let Products = []
@@ -58,7 +60,6 @@
         newBtn.innerHTML = 'DEL'
         newBtn.onclick = () => deleteProduct(i)
         newLi.appendChild(newBtn)
-
         dd.appendChild(newLi)
      })
     }
@@ -86,6 +87,16 @@
             }
         })
         genUi(dsc)
+    }
+    function sortBybeauty(){
+        let res = [...Products].filter((p) => {
+            if(p.category === 'beauty'){
+                return true
+            }else{
+                return false
+            }
+        })
+        genUi(res)
     }
 </script>
 </body>
